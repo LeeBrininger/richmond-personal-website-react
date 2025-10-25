@@ -35,6 +35,11 @@ h1 {
   line-height: 1.1;
 }
 
+.bulletList {
+    max-width: 70vw;
+    text-align: left;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

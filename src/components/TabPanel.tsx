@@ -1,8 +1,8 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
+import type {Job} from "../types/Job.tsx";
 
 interface TabPanelProps {
-    children?: React.ReactNode;
+    children: Job;
     index: number;
     value: number;
 }
@@ -18,7 +18,14 @@ export default function TabPanel(props: TabPanelProps) {
             aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
-            {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+            {value === index && <Box className="bulletList">
+                <p>{children.position}&emsp;&emsp;&emsp;{children.location} ({children.workType})&emsp;&emsp;&emsp;{children.startDate} - {children.endDate}</p>
+                {children.descriptions.map((job, index) => (
+                    <ul>
+                        <li key={index}>{job}</li>
+                    </ul>
+                ))}
+                </Box>}
         </div>
     );
 }

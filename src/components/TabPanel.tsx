@@ -3,8 +3,8 @@ import type {Job} from "../types/Job.tsx";
 
 interface TabPanelProps {
     children: Job;
-    index: number;
-    value: number;
+    index: any;
+    value: any;
 }
 
 export default function TabPanel(props: TabPanelProps) {
@@ -16,10 +16,15 @@ export default function TabPanel(props: TabPanelProps) {
             hidden={value !== index}
             id={`simple-tabpanel-${index}`}
             aria-labelledby={`simple-tab-${index}`}
+            key={index || "none"}
             {...other}
         >
             {value === index && <Box className="bulletList">
-                <p>{children.position}&emsp;&emsp;&emsp;{children.location} ({children.workType})&emsp;&emsp;&emsp;{children.startDate} - {children.endDate}</p>
+                <p className="string-container">
+                    <span className="left-title">{children.position}</span>
+                    <span>{`${children.startDate} - ${children.endDate}`}</span>
+                    <span className="right-title">{children.location}</span>
+                </p>
                 {children.descriptions.map((job, index) => (
                     <ul>
                         <li key={index}>{job}</li>

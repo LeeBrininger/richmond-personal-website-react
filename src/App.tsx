@@ -11,7 +11,7 @@ function App() {
           <Sidebar/>
           <h1>Richmond Brininger</h1>
           <h2>Senior Fullstack Developer</h2>
-          <WorkSection title="RTX" description="Stuff"/>
+          <WorkSection title="RTX" description="Career"/>
       </>
   )
 }

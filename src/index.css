@@ -40,6 +40,27 @@ h1 {
     text-align: left;
 }
 
+.string-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-title {
+    font-weight: bold;
+    text-align: right;
+    margin-left: 4%;
+}
+
+.right-title {
+    text-align: right;
+    margin-right: 4%;
+}
+
+.tabContainer {
+    min-width: 10vw;
+    width: 50vw;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

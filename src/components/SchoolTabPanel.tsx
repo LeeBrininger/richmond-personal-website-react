@@ -1,13 +1,14 @@
 import Box from "@mui/material/Box";
-import type {Job} from "../types/Job.tsx";
+import type {School} from "../types/School.tsx";
+
 
 interface TabPanelProps {
-    children: Job;
+    children: School;
     index: any;
     value: any;
 }
 
-export default function TabPanel(props: TabPanelProps) {
+export default function SchoolTabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
 
     return (
@@ -21,13 +22,13 @@ export default function TabPanel(props: TabPanelProps) {
         >
             {value === index && <Box className="bulletList">
                 <p className="string-container">
-                    <span className="left-title">{children.position}</span>
+                    <span className="left-title">{children.degreeName}</span>
                     <span>{`${children.startDate} - ${children.endDate}`}</span>
-                    <span className="right-title">{children.location}</span>
+                    <span className="right-title">{children.degreeType}</span>
                 </p>
-                {children.descriptions.map((job, index) => (
+                {children.descriptions.map((school: any, index: any) => (
                     <ul>
-                        <li key={index}>{job}</li>
+                        <li key={index}>{school}</li>
                     </ul>
                 ))}
                 </Box>}

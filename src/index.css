@@ -36,7 +36,7 @@ h1 {
 }
 
 .bulletList {
-    max-width: 70vw;
+    max-width: 80vw;
     text-align: left;
 }
 
@@ -58,7 +58,7 @@ h1 {
 
 .tabContainer {
     min-width: 10vw;
-    width: 50vw;
+    width: 55vw;
 }
 
 button {

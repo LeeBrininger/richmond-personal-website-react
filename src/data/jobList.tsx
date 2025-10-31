@@ -3,8 +3,8 @@ import type {Job} from "../types/Job.tsx";
 // This will be a database call in the future
 export const jobList: Job[] = [
     {
-        companyName: "Modus21",
-        position: "Full Stack DevSecOps Engineer",
+        name: "Modus21",
+        position: "Full Stack Software Engineer",
         location: "Charleston, SC",
         workType: "Remote",
         descriptions: ["Contract transferred from NexGen Data Systems to Modus21, stayed in the same role.",
@@ -15,7 +15,7 @@ export const jobList: Job[] = [
         endDate: "Current",
         },
     {
-        companyName: "NexGen Data Systems",
+        name: "NexGen Data Systems",
         position: "Full Stack Software Developer",
         location: "Charleston, SC",
         workType: "Remote",
@@ -39,7 +39,7 @@ export const jobList: Job[] = [
         endDate: "09/2025",
     },
     {
-        companyName: "RTX",
+        name: "RTX",
         position: "Senior Software Engineer",
         location: "Aurora, CO",
         workType: "On-Site",
@@ -61,7 +61,7 @@ export const jobList: Job[] = [
         endDate: "02/2025",
     },
     {
-        companyName: "Infosys",
+        name: "Infosys",
         position: "Software Developer",
         location: "Minneapolis, MN",
         workType: "On-Site",

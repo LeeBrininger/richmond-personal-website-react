@@ -3,7 +3,7 @@ import type {School} from "../types/School.tsx";
 // This will be a database call in the future
 export const schoolList: School[] = [
     {
-        schoolName: "Arizona State University",
+        name: "Arizona State University",
         degreeType: "Master of Science",
         degreeName: "Computer Science",
         minor: "",
@@ -14,7 +14,7 @@ export const schoolList: School[] = [
         endDate: "08/2023",
         },
     {
-        schoolName: "Revature",
+        name: "Revature",
         degreeType: "Full Stack Development",
         degreeName: "Bootcamp",
         minor: "",
@@ -27,40 +27,26 @@ export const schoolList: School[] = [
         endDate: "06/2018",
     },
     {
-        schoolName: "Idaho State University",
+        name: "Idaho State University",
         degreeType: "Bachelor of Science",
         degreeName: "Computer Science",
         minor: "",
         location: "Pocatello, ID",
-        descriptions: ["On-call lead engineer for a system that was responsible for automating operational tasks and " +
-            "routine testing; provided hands-on support, troubleshooting, operational updates, and " +
-            "improvements.",
-            "Developed software using an in-house foundational system made with C++ and Java.",
-            "Additionally developed using C, JavaScript, and Kornshell.",
-            "Performed technical and high-level presentations to management and potential investors.",
-            "Mentored junior developers and trained backups.",
-            "Software developer for command-and-control ground equipment, communications, and " +
-            "management software written in Java.",
-            "Worked with Kubernetes, Docker, and Fortify to deploy the system on a Linux VM and shared " +
-            "cluster via a CI/CD pipeline.",
-            "Performed backend Java development for 90% of the time and integration support for the rest.",
-            "Deployed repos using Gradle; updated the build files to set up and change project " +
-            "dependencies, both local and from Artifactory."],
+        descriptions: ["Completed in one year using credit from my prior minor in computer science.",
+            "Coursework focused on Java and C++ development, as well as algorithms and security.",
+            "Google igniteCS volunteer, introducing high school students to coding via Scratch."],
         startDate: "03/2020",
         endDate: "02/2025",
     },
     {
-        schoolName: "Colorado School of Mines",
+        name: "Colorado School of Mines",
         degreeType: "Bachelor of Science",
         degreeName: "Geophysical Engineering",
         minor: "Computer Science",
         location: "Golden, CO",
-        descriptions: ["Full-stack developer for a Java servlet system hosted through IBM WebSphere, which generated " +
-            "thousands of automated letters a day.",
-            "Primary development engineer for a large-scale data migration of over a million objects.",
-            "Produced PowerShell automations to download and sort thousands of documents.",
-            "Onshore point of contact representing my team of over 10 people in stakeholder and " +
-            "cross-team meetings."],
+        descriptions: ["Geophysical Engineering involves a large amount of data processing, manipulated large data sets to determine the geography of subsurface locations.",
+            "Minored in computer Science as it shared several core classes and was of interest to me.",
+            "Completed numerous advanced math and physics courses, as well as geospatial analysis and imaging."],
         startDate: "06/2018",
         endDate: "03/2020",
     },

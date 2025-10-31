@@ -1,5 +1,5 @@
 export type School = {
-    schoolName: string;
+    name: string;
     degreeType: string;
     degreeName: string;
     minor: string;

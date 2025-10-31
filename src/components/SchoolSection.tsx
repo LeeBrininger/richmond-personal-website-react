@@ -3,16 +3,16 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import {useRef, useState} from "react";
 import * as React from "react";
-import TabPanel from "./TabPanel";
-import type {Job} from "../types/Job.tsx";
+import type {School} from "../types/School.tsx";
+import SchoolTabPanel from "./SchoolTabPanel.tsx";
 
 
 interface WorkTabsProps {
-    jobs: Job[];
+    schools: School[];
 }
 
-export default function TabSection(props: WorkTabsProps) {
-    const {jobs} = props;
+export default function SchoolSection(props: WorkTabsProps) {
+    const {schools} = props;
     const [value, setValue] = useState(false);
     const changed = useRef<boolean>(false);
 
@@ -34,15 +34,15 @@ export default function TabSection(props: WorkTabsProps) {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} centered aria-label="basic tabs example">
-                    {jobs.map((job: Job) => (
-                        <Tab label={job.companyName} key={job.companyName} onClick={handleUnselect}/>
+                    {schools.map((school: School) => (
+                        <Tab label={school.schoolName} key={school.schoolName} onClick={handleUnselect}/>
                     ))}
                 </Tabs>
             </Box>
-            {jobs.map((job: Job, index: number) => (
-                <TabPanel value={value} index={index} key={index || "-1"}>
-                    {job}
-                </TabPanel>
+            {schools.map((school: School, index: number) => (
+                <SchoolTabPanel value={value} index={index} key={index || "-1"}>
+                    {school}
+                </SchoolTabPanel>
             ))}
         </Box>
     );

@@ -1,5 +1,5 @@
 import './App.css'
-import WorkSection from "./components/WorkSection.tsx";
+import TabsSection from "./components/TabsSection.tsx";
 import Sidebar from "./components/SideBar.tsx";
 
 
@@ -11,7 +11,7 @@ function App() {
           <Sidebar/>
           <h1>Richmond Brininger</h1>
           <h2>Senior Fullstack Developer</h2>
-          <WorkSection title="RTX" description="Career"/>
+          <TabsSection/>
       </>
   )
 }

@@ -1,5 +1,6 @@
 import type {Job} from "../types/Job.tsx";
 
+// This will be a database call in the future
 export const jobList: Job[] = [
     {
         companyName: "Modus21",

@@ -14,8 +14,8 @@ export default function WorkTabPanel(props: TabPanelProps) {
         <div
             role="tabpanel"
             hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
+            id={`work-tabpanel-${index}`}
+            aria-labelledby={`work-tab-${index}`}
             key={index || "none"}
             {...other}
         >

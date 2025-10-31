@@ -15,8 +15,8 @@ export default function SchoolTabPanel(props: TabPanelProps) {
         <div
             role="tabpanel"
             hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
+            id={`school-tabpanel-${index}`}
+            aria-labelledby={`school-tab-${index}`}
             key={index || "none"}
             {...other}
         >

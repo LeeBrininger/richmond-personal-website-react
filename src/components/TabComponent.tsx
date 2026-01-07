@@ -35,6 +35,7 @@ export default function TabComponent(props: WorkTabsProps) {
         }
     }, [certifications, jobs, schools]);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleChange = (_event: React.SyntheticEvent, newValue: any) => {
         changed.current = true;
         setValue(newValue);

@@ -1,0 +1,82 @@
+.bulletList {
+    max-width: 80vw;
+    text-align: left;
+}
+
+.string-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-title {
+    font-weight: bold;
+    text-align: right;
+    margin-left: 4%;
+}
+
+.right-title {
+    text-align: right;
+    margin-right: 4%;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    margin-left: 6rem;
+}
+
+.certification {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+button:hover {
+    border-color: green;
+}
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (min-width: 768px) {
+    .mainContainer {
+        margin-left: 6rem;
+    }
+
+    .tabContainer {
+        margin: 9rem 5rem 5rem;
+        width: 80vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        margin-left: 3rem;
+    }
+
+    .tabContainer {
+        margin: 4rem 4rem 4rem 0;
+        width: 80vw;
+
+
+        button {
+            font-size: 0.7em;
+        }
+    }
+
+    h2 {
+        font: 1rem/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+    }
+}

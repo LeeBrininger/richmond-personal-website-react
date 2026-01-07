@@ -33,10 +33,9 @@ export default function TabComponent(props: WorkTabsProps) {
         } else if(certifications) {
             setTabNames(certifications.map(certification => certification.name));
         }
-    }, []);
+    }, [certifications, jobs, schools]);
 
     const handleChange = (_event: React.SyntheticEvent, newValue: any) => {
-        console.log("change");
         changed.current = true;
         setValue(newValue);
     };
@@ -52,7 +51,7 @@ export default function TabComponent(props: WorkTabsProps) {
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} centered aria-label="basic tabs example">
+                <Tabs value={value} onChange={handleChange} centered aria-label="basic tabs">
                     {tabNames.map((name: string) => (
                         <Tab label={name} key={name} onClick={handleUnselect}/>
                     ))}

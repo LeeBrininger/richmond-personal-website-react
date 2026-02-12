@@ -3,7 +3,7 @@ import { jobList } from "../data/jobList.tsx";
 import { schoolList } from "../data/schoolList.tsx";
 import { certificationList } from "../data/certificationList.tsx";
 import GlobeSection from "./GlobeSection.tsx";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SelectionContext } from "./SelectionContext.tsx";
 import WorkTabPanel from "./panels/WorkTabPanel.tsx";
 import SchoolTabPanel from "./panels/SchoolTabPanel.tsx";
@@ -18,24 +18,36 @@ export default function TabsSection() {
     selection,
     setSelection,
   };
+  const careerRef = useRef<HTMLDivElement>(null);
+  const educationRef = useRef<HTMLDivElement>(null);
+  const certificationRef = useRef<HTMLDivElement>(null);
 
   return (
     <SelectionContext.Provider value={selectionValue}>
       <GlobeSection className="mapContainer" />
       <div className="contentContainer">
         <div className="slidingPanel">
-          <h2>Career</h2>
-          <TabComponent SubComponent={workTabPanel} values={jobList} />
+          <h2 ref={careerRef}>Career</h2>
+          <TabComponent
+            SubComponent={workTabPanel}
+            values={jobList}
+            containerRef={careerRef}
+          />
         </div>
         <div className="slidingPanel">
-          <h2>Education</h2>
-          <TabComponent SubComponent={schoolTabPanel} values={schoolList} />
+          <h2 ref={educationRef}>Education</h2>
+          <TabComponent
+            SubComponent={schoolTabPanel}
+            values={schoolList}
+            containerRef={educationRef}
+          />
         </div>
         <div className="slidingPanel">
-          <h2>Certifications</h2>
+          <h2 ref={certificationRef}>Certifications</h2>
           <TabComponent
             SubComponent={certificationTabPanel}
             values={certificationList}
+            containerRef={certificationRef}
           />
         </div>
       </div>

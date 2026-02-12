@@ -3,7 +3,13 @@ import figmaLogo from "/figma-logo.png";
 import gitHubLogo from "/github-mark-white.png";
 import linkedInLogo from "/LI-In-Bug.png";
 
-export default function HeaderBar() {
+type HeaderBarProps = {
+  actionMain: (page: string) => void;
+};
+
+export default function HeaderBar(props: HeaderBarProps) {
+  const { actionMain } = props;
+
   return (
     <header className="headerBar">
       <title>{metadata.title}</title>
@@ -14,7 +20,12 @@ export default function HeaderBar() {
         <h1>Richmond Brininger</h1>
       </div>
       <div className="logos">
-        <h1>Richmond Brininger</h1>
+        <p className="links" onClick={() => actionMain("landing")}>
+          Home
+        </p>
+        <p className="links" onClick={() => actionMain("resume")}>
+          Resume
+        </p>
         <a href="https://www.figma.com/site/HgtKtjqiDaoBmfgxTNj3Rm/Richmond-Website?node-id=0-1&t=ogF7uen3WTK0xC11-1">
           <img src={figmaLogo} className="logo" alt="Figma logo" />
         </a>

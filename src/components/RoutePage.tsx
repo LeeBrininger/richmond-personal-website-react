@@ -1,3 +1,4 @@
+import HeaderBar from "./HeaderBar.tsx";
 import LandingPage from "./LandingPage.tsx";
 import Slider from "./Slider.tsx";
 import TabsSection from "./TabsSection.tsx";
@@ -6,23 +7,37 @@ import { useState } from "react";
 export type visibleArray = {
   landing: boolean;
   resume: boolean;
-  globe: boolean;
 };
 
 export default function RoutePage() {
   const [isVisible, setIsVisible] = useState<visibleArray>({
     landing: true,
     resume: false,
-    globe: false,
   });
 
-  const slideOffScreen = () => {
+  const slideOffScreen = (active: string) => {
     setIsVisible(() => {
-      const values: visibleArray = {
-        landing: false,
-        resume: true,
-        globe: false,
-      };
+      let values: visibleArray;
+      switch (active) {
+        case "landing":
+          values = {
+            landing: true,
+            resume: false,
+          };
+          break;
+        case "resume":
+          values = {
+            landing: false,
+            resume: true,
+          };
+          break;
+        default:
+          values = {
+            landing: true,
+            resume: false,
+          };
+          break;
+      }
       return { ...values };
     });
   };
@@ -51,6 +66,7 @@ export default function RoutePage() {
 
   return (
     <>
+      <HeaderBar actionMain={slideOffScreen} />
       <div className="mainLayout">
         <Slider
           direction={randomDirection()}

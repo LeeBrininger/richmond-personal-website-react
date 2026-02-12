@@ -14,7 +14,6 @@ import HeaderBar from "./components/HeaderBar.tsx";
 function App() {
   return (
     <div>
-      <HeaderBar />
       <RoutePage />
     </div>
   );

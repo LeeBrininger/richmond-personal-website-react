@@ -5,7 +5,7 @@ import selfe from "/src/assets/selfie.jpeg";
 import { prewarm } from "maplibre-gl";
 
 type LandingPageProps = {
-  actionMain: () => void;
+  actionMain: (page: string) => void;
 };
 
 export default function LandingPage(props: LandingPageProps) {
@@ -26,7 +26,10 @@ export default function LandingPage(props: LandingPageProps) {
         <p className="description">{about}</p>
         <SliderScroll startLocation={{ x: -300, y: 0 }}>
           <div className="landingButton">
-            <button className="btn btn-outline-primary" onClick={actionMain}>
+            <button
+              className="btn btn-outline-primary"
+              onClick={() => actionMain("resume")}
+            >
               Click to Learn More
             </button>
           </div>

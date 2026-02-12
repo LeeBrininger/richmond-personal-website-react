@@ -29,6 +29,13 @@
   display: flex;
 }
 
+.links {
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.8em;
+}
+
 .headerName {
   justify-self: start;
   min-width: 30rem;

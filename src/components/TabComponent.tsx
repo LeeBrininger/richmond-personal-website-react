@@ -31,7 +31,7 @@ export default function TabComponent(props: TabComponentProps) {
       if (containerRef.current) {
         const elementPosition =
           containerRef.current.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - 100;
+        const offsetPosition = elementPosition + window.pageYOffset - 125;
 
         window.scrollTo({
           top: offsetPosition,

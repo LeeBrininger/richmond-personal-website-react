@@ -14,6 +14,7 @@ export default function HeaderBar() {
         <h1>Richmond Brininger</h1>
       </div>
       <div className="logos">
+        <h1>Richmond Brininger</h1>
         <a href="https://www.figma.com/site/HgtKtjqiDaoBmfgxTNj3Rm/Richmond-Website?node-id=0-1&t=ogF7uen3WTK0xC11-1">
           <img src={figmaLogo} className="logo" alt="Figma logo" />
         </a>

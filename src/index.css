@@ -4,7 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: rgba(8, 32, 80, 0.6) !important;
+  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, black, grey);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

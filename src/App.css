@@ -1,12 +1,30 @@
 #root {
   margin: 0;
-  padding: 2rem;
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  font-family: "Montserrat", serif;
 }
 
 body {
-    background-image: url('./assets/elara.jpeg');
-    background-size: cover; /* Scales the image to cover the entire element */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    height: 100vh; /* Ensures the div covers the full viewport height */
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Quantico", serif;
+}
+
+h2 {
+  font-family: "Quantico", serif;
+}
+
+.mainLayout {
+  display: flex;
+}
+
+.animated {
+  overflow: hidden;
 }

@@ -1,32 +1,74 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import LandingPage from "./LandingPage.tsx";
-import ResumePage from "./ResumePage.tsx";
+import Slider from "./Slider.tsx";
+import TabsSection from "./TabsSection.tsx";
+import { useState } from "react";
 
-const slideVariants = {
-    hidden: {opacity: 0, x: "100%"},
-    visible: { opacity: 1, x: "0%", transition: { type: "spring", stiffness: 50 } },
-    exit: { opacity: 0, x: "-100%", transition: { duration: 0.3 } }
-}
+export type visibleArray = {
+  landing: boolean;
+  resume: boolean;
+  globe: boolean;
+};
 
-export default function Routes() {
-    const location = useLocation();
-    return (
-        <AnimatePresence>
-            <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<motion.div
-                    variants={slideVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                ><LandingPage /></motion.div>} />
-                <Route path="/about" element={<motion.div
-                    variants={slideVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                ><ResumePage /></motion.div>} />
-            </Routes>
-        </AnimatePresence>
-    );
+export default function RoutePage() {
+  const [isVisible, setIsVisible] = useState<visibleArray>({
+    landing: true,
+    resume: false,
+    globe: false,
+  });
+
+  const slideOffScreen = () => {
+    setIsVisible(() => {
+      const values: visibleArray = {
+        landing: false,
+        resume: true,
+        globe: false,
+      };
+      return { ...values };
+    });
+  };
+
+  const randomDirection = () => {
+    const min = 1;
+    const max = 6;
+    const newNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    switch (newNumber) {
+      case 1:
+        return "up";
+      case 2:
+        return "upLeft";
+      case 3:
+        return "upRight";
+      case 4:
+        return "down";
+      case 5:
+        return "downLeft";
+      case 6:
+        return "downRight";
+      default:
+        return "up";
+    }
+  };
+
+  return (
+    <>
+      <div className="mainLayout">
+        <Slider
+          direction={randomDirection()}
+          visible={isVisible.landing}
+          starting={true}
+        >
+          <LandingPage actionMain={slideOffScreen} />
+        </Slider>
+        <Slider
+          direction={randomDirection()}
+          visible={isVisible.resume}
+          starting={false}
+        >
+          <div className="mainContainer">
+            <TabsSection />
+          </div>
+        </Slider>
+      </div>
+    </>
+  );
 }

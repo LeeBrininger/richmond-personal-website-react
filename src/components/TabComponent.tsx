@@ -38,7 +38,7 @@ export default function TabComponent(props: TabComponentProps) {
           behavior: "smooth",
         });
       }
-    }, 10);
+    }, 200);
   };
 
   const handleUnselect = () => {

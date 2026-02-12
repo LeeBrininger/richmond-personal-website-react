@@ -1,84 +1,54 @@
-import {useEffect, useRef, useState} from "react";
-import * as React from "react";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import type {School} from "../types/School.tsx";
-import SchoolTabPanel from "./SchoolTabPanel.tsx";
-import type {Job} from "../types/Job.tsx";
-import WorkTabPanel from "./WorkTabPanel.tsx";
-import type {Certification} from "../types/Certification.tsx";
-import CertificationTabPanel from "./CertificationTabPanel.tsx";
+import { useContext, useRef, useState, type SyntheticEvent } from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import { SelectionContext } from "./SelectionContext.tsx";
 
-
-
-interface WorkTabsProps {
-    jobs?: Job[];
-    schools?: School[];
-    certifications?: Certification[];
+interface TabComponentProps {
+  SubComponent: any;
+  values: any[];
 }
 
-export default function TabComponent(props: WorkTabsProps) {
-    const {jobs, schools, certifications} = props;
-    const [value, setValue] = useState(false);
-    const [tabNames, setTabNames] = useState<string[]>([]);
-    const changed = useRef<boolean>(false);
+export default function TabComponent(props: TabComponentProps) {
+  const { SubComponent, values } = props;
+  const [selected, setSelected] = useState(false);
+  const changed = useRef<boolean>(false);
+  const { setSelection } = useContext(SelectionContext);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleChange = (_event: SyntheticEvent, newValue: any) => {
+    changed.current = true;
+    setSelected(newValue);
+    setSelection(values[newValue]);
+  };
 
-    useEffect(() => {
-        if(jobs){
-            setTabNames(jobs.map(job => job.name));
-        } else if(schools) {
-            setTabNames(schools.map(school => school.name));
-        } else if(certifications) {
-            setTabNames(certifications.map(certification => certification.name));
-        }
-    }, [certifications, jobs, schools]);
+  const handleUnselect = () => {
+    if (changed.current) {
+      changed.current = false;
+    } else {
+      setSelected(false);
+    }
+  };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleChange = (_event: React.SyntheticEvent, newValue: any) => {
-        changed.current = true;
-        setValue(newValue);
-    };
-
-    const handleUnselect = () => {
-        if(changed.current){
-            changed.current = false;
-        } else {
-            setValue(false);
-        }
-    };
-
-    return (
-        <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} centered aria-label="basic tabs">
-                    {tabNames.map((name: string) => (
-                        <Tab label={name} key={name} onClick={handleUnselect}/>
-                    ))}
-                </Tabs>
-            </Box>
-            {jobs &&
-                jobs.map((job: Job, index: number) => (
-                        <WorkTabPanel value={value} index={index} key={index || "-1"}>
-                            {job}
-                        </WorkTabPanel>
-                ))
-            }
-            {schools &&
-                schools.map((school: School, index: number) => (
-                    <SchoolTabPanel value={value} index={index} key={index || "-1"}>
-                        {school}
-                    </SchoolTabPanel>
-                ))
-            }
-            {certifications &&
-                certifications.map((certification: Certification, index: number) => (
-                    <CertificationTabPanel value={value} index={index} key={index || "-1"}>
-                        {certification}
-                    </CertificationTabPanel>
-                ))
-            }
-        </Box>
-    );
+  return (
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={selected}
+          onChange={handleChange}
+          centered
+          aria-label="basic tabs"
+        >
+          {values.map((value: any) => (
+            <Tab label={value.name} key={value.name} onClick={handleUnselect} />
+          ))}
+        </Tabs>
+      </Box>
+      {values.map((value: any, index: number) => (
+        <SubComponent value={selected} index={index} key={value.name}>
+          {value}
+        </SubComponent>
+      ))}
+    </Box>
+  );
 }

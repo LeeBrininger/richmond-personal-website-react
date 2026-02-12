@@ -21,10 +21,6 @@ h2 {
   font-family: "Quantico", serif;
 }
 
-.overallLayout {
-  background-color: rgba(8, 32, 80, 0.5);
-}
-
 .mainLayout {
   display: flex;
 }

@@ -1,10 +1,12 @@
 export type School = {
-    name: string;
-    degreeType: string;
-    degreeName: string;
-    minor: string;
-    location: string;
-    descriptions: string[];
-    startDate: string;
-    endDate: string;
-}
+  name: string;
+  degreeType: string;
+  degreeName: string;
+  minor: string;
+  location: string;
+  descriptions: string[];
+  startDate: string;
+  endDate: string;
+  longitude: number;
+  latitude: number;
+};

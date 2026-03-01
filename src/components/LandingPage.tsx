@@ -21,7 +21,7 @@ export default function LandingPage(props: LandingPageProps) {
           <h1 className="landingTitle">Richmond Brininger</h1>
         </SliderScroll>
         <SliderScroll startLocation={{ x: 300, y: 0 }}>
-          <h2 className="landingTitle">Senior Fullstack Developer</h2>
+          <h2 className="landingTitle">Senior Full-Stack Developer</h2>
         </SliderScroll>
         <p className="description">{about}</p>
         <SliderScroll startLocation={{ x: -300, y: 0 }}>

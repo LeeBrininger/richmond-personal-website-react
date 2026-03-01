@@ -5,10 +5,11 @@ interface TabPanelProps {
   children: School;
   index: any;
   value: any;
+  mobile: boolean;
 }
 
 export default function SchoolTabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, mobile, ...other } = props;
 
   return (
     <div
@@ -21,8 +22,10 @@ export default function SchoolTabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box className="bulletList">
-          <p className="string-container">
-            <span className="left-title">{children.degreeName}</span>
+          <p className={mobile ? "string-container-phone" : "string-container"}>
+            <span className={!mobile ? "left-title" : ""}>
+              {children.degreeName}
+            </span>
             <span>{`${children.startDate} - ${children.endDate}`}</span>
             <span className="right-title">{children.degreeType}</span>
           </p>

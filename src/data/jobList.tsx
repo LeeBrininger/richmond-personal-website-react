@@ -4,7 +4,7 @@ import type { Job } from "../types/Job.tsx";
 export const jobList: Job[] = [
   {
     name: "Modus21",
-    position: "Full Stack Software Engineer",
+    position: "Full-Stack Software Engineer",
     location: "Charleston, SC",
     workType: "Remote",
     descriptions: [
@@ -20,7 +20,7 @@ export const jobList: Job[] = [
   },
   {
     name: "NexGen Data Systems",
-    position: "Full Stack Software Developer",
+    position: "Full-Stack Software Developer",
     location: "Charleston, SC",
     workType: "Remote",
     descriptions: [
@@ -92,7 +92,7 @@ export const jobList: Job[] = [
   },
   {
     name: "Revature",
-    position: "Full Stack Software Developer",
+    position: "Full-Stack Software Developer",
     location: "Reston, VA",
     workType: "On-Site",
     descriptions: [

@@ -4,12 +4,17 @@ import { schoolList } from "../data/schoolList.tsx";
 import { certificationList } from "../data/certificationList.tsx";
 import GlobeSection from "./GlobeSection.tsx";
 import { useRef, useState } from "react";
-import { SelectionContext } from "./SelectionContext.tsx";
+import { SelectionContext } from "./contexts/SelectionContext.tsx";
 import WorkTabPanel from "./panels/WorkTabPanel.tsx";
 import SchoolTabPanel from "./panels/SchoolTabPanel.tsx";
 import CertificationTabPanel from "./panels/CertificationTabPanel.tsx";
 
-export default function TabsSection() {
+interface ResumeSectionProps {
+  mobile: boolean;
+}
+
+export default function ResumeSection(props: ResumeSectionProps) {
+  const { mobile } = props;
   const [selection, setSelection] = useState("career");
   const workTabPanel = WorkTabPanel;
   const schoolTabPanel = SchoolTabPanel;
@@ -26,28 +31,31 @@ export default function TabsSection() {
     <SelectionContext.Provider value={selectionValue}>
       <GlobeSection className="mapContainer" />
       <div className="contentContainer">
-        <div className="slidingPanel">
+        <div className={mobile ? "slidingPanel-phone" : "slidingPanel"}>
           <h2 ref={careerRef}>Career</h2>
           <TabComponent
             SubComponent={workTabPanel}
             values={jobList}
             containerRef={careerRef}
+            mobile={mobile}
           />
         </div>
-        <div className="slidingPanel">
+        <div className={mobile ? "slidingPanel-phone" : "slidingPanel"}>
           <h2 ref={educationRef}>Education</h2>
           <TabComponent
             SubComponent={schoolTabPanel}
             values={schoolList}
             containerRef={educationRef}
+            mobile={mobile}
           />
         </div>
-        <div className="slidingPanel">
+        <div className={mobile ? "slidingPanel-phone" : "slidingPanel"}>
           <h2 ref={certificationRef}>Certifications</h2>
           <TabComponent
             SubComponent={certificationTabPanel}
             values={certificationList}
             containerRef={certificationRef}
+            mobile={mobile}
           />
         </div>
       </div>

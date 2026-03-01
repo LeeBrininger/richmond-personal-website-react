@@ -7,7 +7,23 @@
     <title>richmond-personal-website</title>
   </head>
   <body>
-    <div id="root"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <!-- Default loading content (e.g., a simple spinner and text) -->
+      <style>
+        .initial-loader {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-size: larger;
+        }
+      </style>
+      <div class="initial-loader">
+        <h3>Loading Some<br />&nbsp;&nbsp;Good Stuff</h3>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -9,7 +9,6 @@ import "@fontsource/quantico";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import RoutePage from "./components/RoutePage.tsx";
-import HeaderBar from "./components/HeaderBar.tsx";
 
 function App() {
   return (

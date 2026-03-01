@@ -1,3 +1,8 @@
+.box-format {
+  border-bottom: 1px solid;
+  border-color: "divider";
+}
+
 .bulletList {
   max-width: 80vw;
   text-align: left;
@@ -6,6 +11,12 @@
 .string-container {
   display: flex;
   justify-content: space-between;
+}
+
+.string-container-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .left-title {
@@ -25,6 +36,14 @@
   margin-left: 6rem;
 }
 
+.mainContainer-phone {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+  margin-bottom: 3em;
+  margin-left: 1rem;
+}
+
 .certification {
   max-width: 100%;
   height: auto;
@@ -38,24 +57,23 @@
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
+.slidingPanel-phone {
+  padding: 1rem;
+  border-color: black;
+  border-style: outset;
+  border-radius: 3rem;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  margin-bottom: 1rem;
+}
+
 .mapContainer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: -1;
   opacity: 0.5;
-}
-
-.mapContainer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
 }
 
 h2 {
@@ -86,6 +104,7 @@ h2 {
     }
     button:hover {
       border-color: green;
+      border-width: 1px;
     }
     button:focus,
     button:focus-visible {

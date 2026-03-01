@@ -14,12 +14,12 @@
   margin-left: 10rem;
   padding: 1rem;
   border-color: black;
+  z-index: 10;
 }
 
 .headerVideo {
   position: absolute;
   left: 0;
-  transform: translateX(-45%);
   width: auto;
   height: 100%;
   overflow: hidden;
@@ -30,7 +30,6 @@
   right: 5%;
   top: 20%;
   width: auto;
-  height: 40%;
   overflow: hidden;
 }
 
@@ -66,4 +65,113 @@
   color: #fff;
   border-radius: 5%;
   padding: 0.2rem;
+}
+
+/* Big Desktop */
+@media (min-width: 2560px) {
+  .headerVideo {
+    position: absolute;
+    left: 1;
+    transform: translateX(-60%);
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .selfie {
+    height: 30%;
+    position: absolute;
+    right: 8%;
+    top: 22%;
+    width: auto;
+    overflow: hidden;
+  }
+}
+
+/* Normal Desktop */
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .headerVideo {
+    transform: translateX(-55%);
+  }
+
+  .selfie {
+    height: 30%;
+    position: absolute;
+    right: 8%;
+    top: 22%;
+    width: auto;
+    overflow: hidden;
+  }
+}
+
+/* Small Desktop */
+@media (min-width: 1680px) and (max-width: 1920px) {
+  .headerVideo {
+    transform: translateX(-40%);
+  }
+
+  .selfie {
+    height: 30%;
+    position: absolute;
+    right: 9%;
+    top: 22%;
+    width: auto;
+    overflow: hidden;
+  }
+}
+
+/* Laptop */
+@media (min-width: 667px) and (max-width: 1680px) {
+  .headerVideo {
+    transform: translateX(-60%);
+  }
+
+  .selfie {
+    height: 30%;
+    right: 5%;
+    top: 20%;
+    width: auto;
+    overflow: hidden;
+  }
+}
+
+/* Large Phone */
+@media (max-width: 667px) {
+  .landingPage {
+    margin-top: 10rem;
+    height: 50vh;
+    width: 100vw;
+
+    h1 {
+      font-size: 1.9em;
+    }
+
+    h2 {
+      font-size: 1.2em;
+    }
+  }
+
+  .landingContent {
+    margin-left: 1rem;
+    padding: 1rem;
+    border-color: black;
+  }
+
+  .headerVideo {
+    display: none;
+  }
+
+  .selfie {
+    height: 23%;
+    right: 55%;
+    top: 100%;
+  }
+
+  .description {
+    max-width: 600px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5%;
+    padding: 0.2rem;
+  }
 }

@@ -1,8 +1,8 @@
 import HeaderBar from "./HeaderBar.tsx";
 import LandingPage from "./LandingPage.tsx";
 import Slider from "./Slider.tsx";
-import TabsSection from "./TabsSection.tsx";
-import { useState } from "react";
+import ResumeSection from "./ResumeSection.tsx";
+import { useEffect, useState } from "react";
 
 export type visibleArray = {
   landing: boolean;
@@ -14,6 +14,26 @@ export default function RoutePage() {
     landing: true,
     resume: false,
   });
+
+  const MOBILE_BREAKPOINT = 768;
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    }
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const slideOffScreen = (active: string) => {
     setIsVisible(() => {
@@ -80,8 +100,8 @@ export default function RoutePage() {
           visible={isVisible.resume}
           starting={false}
         >
-          <div className="mainContainer">
-            <TabsSection />
+          <div className={isMobile ? "mainContainer-phone" : "mainContainer"}>
+            <ResumeSection mobile={isMobile} />
           </div>
         </Slider>
       </div>

@@ -6,6 +6,7 @@ interface TabPanelProps {
   children: Certification;
   index: any;
   value: any;
+  mobile: boolean;
 }
 
 function DisplayImage(name: any) {

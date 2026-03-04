@@ -36,6 +36,12 @@ export default function NavDropdown({ actionMain }: NavDropdownProps) {
         <p className="link" onClick={() => handleClick("resume")}>
           Resume
         </p>
+        <p className="link" onClick={() => handleClick("about")}>
+          About
+        </p>
+        <p className="link" onClick={() => handleClick("website")}>
+          Website
+        </p>
       </div>
     );
   }
@@ -55,6 +61,12 @@ export default function NavDropdown({ actionMain }: NavDropdownProps) {
           </p>
           <p className="links" onClick={() => handleClick("resume")}>
             Resume
+          </p>
+          <p className="links" onClick={() => handleClick("about")}>
+            About
+          </p>
+          <p className="links" onClick={() => handleClick("website")}>
+            Website
           </p>
         </ul>
       )}

@@ -22,13 +22,25 @@ export default function HeaderBar(props: HeaderBarProps) {
       </div>
       <div className="logos">
         <NavDropdown actionMain={actionMain} />
-        <a href="https://www.figma.com/site/HgtKtjqiDaoBmfgxTNj3Rm/Richmond-Website?node-id=0-1&t=ogF7uen3WTK0xC11-1">
+        <a
+          href="https://www.figma.com/site/HgtKtjqiDaoBmfgxTNj3Rm/Richmond-Website?node-id=0-1&t=ogF7uen3WTK0xC11-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={figmaLogo} className="logo" alt="Figma logo" />
         </a>
-        <a href="https://www.linkedin.com/in/richmondbrininger">
+        <a
+          href="https://www.linkedin.com/in/richmondbrininger"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={linkedInLogo} className="logo" alt="LinkedIn logo" />
         </a>
-        <a href="https://github.com/LeeBrininger/richmond-personal-website-react.git">
+        <a
+          href="https://github.com/LeeBrininger/richmond-personal-website-react.git"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={gitHubLogo} className="logo logo-spin" alt="GitHub logo" />
         </a>
       </div>

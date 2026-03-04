@@ -1,19 +1,19 @@
-import TabComponent from "./TabComponent.tsx";
-import { jobList } from "../data/jobList.tsx";
-import { schoolList } from "../data/schoolList.tsx";
-import { certificationList } from "../data/certificationList.tsx";
-import GlobeSection from "./GlobeSection.tsx";
+import TabComponent from "../TabComponent.tsx";
+import { jobList } from "../../data/jobList.tsx";
+import { schoolList } from "../../data/schoolList.tsx";
+import { certificationList } from "../../data/certificationList.tsx";
+import GlobeSection from "../GlobeSection.tsx";
 import { useRef, useState } from "react";
-import { SelectionContext } from "./contexts/SelectionContext.tsx";
-import WorkTabPanel from "./panels/WorkTabPanel.tsx";
-import SchoolTabPanel from "./panels/SchoolTabPanel.tsx";
-import CertificationTabPanel from "./panels/CertificationTabPanel.tsx";
+import { SelectionContext } from "../contexts/SelectionContext.tsx";
+import WorkTabPanel from "../panels/WorkTabPanel.tsx";
+import SchoolTabPanel from "../panels/SchoolTabPanel.tsx";
+import CertificationTabPanel from "../panels/CertificationTabPanel.tsx";
 
-interface ResumeSectionProps {
+interface ResumePageProps {
   mobile: boolean;
 }
 
-export default function ResumeSection(props: ResumeSectionProps) {
+export default function ResumePage(props: ResumePageProps) {
   const { mobile } = props;
   const [selection, setSelection] = useState("career");
   const workTabPanel = WorkTabPanel;

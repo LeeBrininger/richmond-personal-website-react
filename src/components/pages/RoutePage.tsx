@@ -1,18 +1,24 @@
-import HeaderBar from "./HeaderBar.tsx";
+import HeaderBar from "../HeaderBar.tsx";
 import LandingPage from "./LandingPage.tsx";
-import Slider from "./Slider.tsx";
-import ResumeSection from "./ResumeSection.tsx";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
+import AboutPage from "./AboutPage.tsx";
+import Slider from "../motion/Slider.tsx";
+const ResumePage = lazy(() => import("./ResumePage.tsx"));
+const WebsitePage = lazy(() => import("./WebsitePage.tsx"));
 
 export type visibleArray = {
   landing: boolean;
   resume: boolean;
+  about: boolean;
+  website: boolean;
 };
 
 export default function RoutePage() {
   const [isVisible, setIsVisible] = useState<visibleArray>({
     landing: true,
     resume: false,
+    about: false,
+    website: false,
   });
 
   const MOBILE_BREAKPOINT = 768;
@@ -43,18 +49,40 @@ export default function RoutePage() {
           values = {
             landing: true,
             resume: false,
+            about: false,
+            website: false,
           };
           break;
         case "resume":
           values = {
             landing: false,
             resume: true,
+            about: false,
+            website: false,
+          };
+          break;
+        case "about":
+          values = {
+            landing: false,
+            resume: false,
+            about: true,
+            website: false,
+          };
+          break;
+        case "website":
+          values = {
+            landing: false,
+            resume: false,
+            about: false,
+            website: true,
           };
           break;
         default:
           values = {
             landing: true,
             resume: false,
+            about: false,
+            website: false,
           };
           break;
       }
@@ -100,9 +128,27 @@ export default function RoutePage() {
           visible={isVisible.resume}
           starting={false}
         >
-          <div className={isMobile ? "mainContainer-phone" : "mainContainer"}>
-            <ResumeSection mobile={isMobile} />
-          </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <div className={isMobile ? "mainContainer-phone" : "mainContainer"}>
+              <ResumePage mobile={isMobile} />
+            </div>
+          </Suspense>
+        </Slider>
+        <Slider
+          direction={randomDirection()}
+          visible={isVisible.about}
+          starting={false}
+        >
+          <AboutPage />
+        </Slider>
+        <Slider
+          direction={randomDirection()}
+          visible={isVisible.website}
+          starting={false}
+        >
+          <Suspense fallback={<div>Loading...</div>}>
+            <WebsitePage />
+          </Suspense>
         </Slider>
       </div>
     </>

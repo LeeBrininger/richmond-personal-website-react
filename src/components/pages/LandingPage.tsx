@@ -1,5 +1,5 @@
-import { about } from "../data/about.tsx";
-import SliderScroll from "./SliderScroll.tsx";
+import { about } from "../../data/about.tsx";
+import SliderScroll from "../motion/SliderScroll.tsx";
 import headerVid from "/coding.gif";
 import selfe from "/src/assets/selfie.jpeg";
 import { prewarm } from "maplibre-gl";

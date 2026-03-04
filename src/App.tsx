@@ -3,12 +3,14 @@ import "./styles/Icons.css";
 import "./styles/HeaderBar.css";
 import "./styles/TabComponent.css";
 import "./styles/LandingPage.css";
+import "./styles/AboutPage.css";
+import "./styles/WebsitePage.css";
 import "@fontsource/lora";
 import "@fontsource/montserrat";
 import "@fontsource/quantico";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-import RoutePage from "./components/RoutePage.tsx";
+import RoutePage from "./components/pages/RoutePage.tsx";
 
 function App() {
   return (
